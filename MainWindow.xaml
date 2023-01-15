@@ -1,0 +1,31 @@
+﻿<Window x:Class="MenuWithSubMenu.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MenuWithSubMenu" xmlns:customcontrol="clr-namespace:MenuWithSubMenu.CustomControl"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition x:Name="col_side"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <DockPanel Background="LightBlue"/>
+        <DockPanel Grid.Column="1" Background="LightBlue">
+            <Button Click="Button_Click"
+                Width="40" HorizontalAlignment="Left" Margin="5" BorderThickness="0" />
+
+        </DockPanel>
+
+    
+        <customcontrol:MenuWithSubMenuControl x:Name="pn_sidebar" Grid.Row="1" HasIcon="True" SubMenuPadding="15,0,0,0"/>
+
+        <Frame x:Name="MainWindowFrame" Grid.Row="1" Grid.Column="1" NavigationUIVisibility="Hidden"/>
+    </Grid>
+</Window>
